@@ -76,14 +76,46 @@ export const SITE_DATA = {
   },
   schoolSpotlight: {
     eyebrow: "Real Impact In Real Classrooms",
-    heading: "Partner School Spotlight: Global Wisdom International School",
-    schoolName: "Global Wisdom International School, Dera Bassi",
-    quote: "Every Line of Code Builds the Future.",
-    subtext: "Coding teaches students how to think logically, solve challenges, and transform creative ideas into real digital and physical solutions.",
+    heading: "Partner School Ecosystems & Innovation Labs",
+    schoolName: "Global Wisdom International School & Paragon 69 School",
+    quote: "INNOVATION STARTS WITH OBSERVATION: Observe • Identify • Think • Build",
+    subtext: "INNVERSE establishes dedicated, fully equipped Innovation Labs and hands-on technology ecosystems directly inside our partner schools.",
     gallery: [
       {
+        id: "globalites-lab-full",
+        title: "Globalites Innovation Lab - Real Classroom Setup",
+        desc: "State-of-the-art Innovation Lab powered by INNVERSE at Global Wisdom International School featuring modular lab furniture, smart displays, and hands-on STEM stations.",
+        image: "/images/globalites-innovation-lab.jpg",
+        badge: "Globalites Innovation Lab",
+        location: "Global Wisdom International School, Dera Bassi"
+      },
+      {
+        id: "globalites-lab-tv",
+        title: "Interactive Smart Board & Collaboration Display",
+        desc: "Smart digital display and official INNVERSE collaboration banner inside Globalites Innovation Lab welcoming students to daily robotics and AI sessions.",
+        image: "/images/globalites-lab-tv.jpg",
+        badge: "Smart Lab Technology",
+        location: "Dera Bassi Campus"
+      },
+      {
+        id: "paragon-building",
+        title: "Paragon Senior Secondary School (Sec-69 Mohali)",
+        desc: "Paragon Senior Secondary School, Sector 69 SAS Nagar Mohali — one of our premier partner institutions driving future-tech education.",
+        image: "/images/paragon-school-building.jpg",
+        badge: "Partner Institution",
+        location: "Sec-69, SAS Nagar, Mohali"
+      },
+      {
+        id: "paragon-entrance",
+        title: "Paragon 69 School Campus Entrance",
+        desc: "Entrance view of Paragon 69 School, CBSE affiliated institution partnered with INNVERSE for robotics and computational thinking programs.",
+        image: "/images/paragon-school-sign.jpg",
+        badge: "CBSE Partner School",
+        location: "Mohali, Punjab"
+      },
+      {
         id: "robot-team",
-        title: "Young Innovators & 4-Wheel Robot Chassis",
+        title: "Young Innovators & Autonomous Robot Build",
         desc: "Global Wisdom International School students proudly showcasing their autonomous 4-wheel robot car build after a hands-on robotics session.",
         image: "/images/students-robot-team.jpg",
         badge: "Robotics & Hardware",
@@ -91,10 +123,10 @@ export const SITE_DATA = {
       },
       {
         id: "coding-session",
-        title: "Hands-on Coding & Circuit Calibration",
-        desc: "Students debugging C++ code on laptop and testing real-time motor signals connected to their robot car.",
+        title: "Hands-on C++ Coding & Circuit Testing",
+        desc: "Students debugging micro-controller code on laptop and calibrating real-time motor signals connected to their robot car.",
         image: "/images/students-coding-robot.jpg",
-        badge: "Coding & Microcontrollers",
+        badge: "Coding & Electronics",
         location: "Innovation Lab"
       },
       {
@@ -103,15 +135,7 @@ export const SITE_DATA = {
         desc: "INNVERSE & Global Wisdom International School official partnership poster highlighting computational thinking and future skills.",
         image: "/images/every-line-of-code-poster.jpg",
         badge: "INNVERSE Ecosystem",
-        location: "School Poster"
-      },
-      {
-        id: "school-campus",
-        title: "Global Wisdom International School Campus",
-        desc: "State-of-the-art campus in Dera Bassi where INNVERSE powers weekly AI, Robotics, and Electronics learning.",
-        image: "/images/global-wisdom-school-building.jpg",
-        badge: "Partner Institution",
-        location: "Dera Bassi"
+        location: "School Banner"
       }
     ]
   },

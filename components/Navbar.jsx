@@ -30,8 +30,15 @@ export default function Navbar() {
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="wrap navbar">
           <Link href="/" className="nav-brand">
-            <span className="brand-logo-text">INNVERSE</span>
-            <span className="brand-dot">.</span>
+            <img 
+              src="/images/innverse-official-logo.jpg" 
+              alt="INNVERSE Logo" 
+              className="brand-logo-img"
+            />
+            <span className="brand-logo-text">
+              <span className="text-inn">INN</span>
+              <span className="text-verse">VERSE</span>
+            </span>
           </Link>
 
           <nav className="nav-links">
@@ -126,15 +133,34 @@ export default function Navbar() {
         .nav-brand {
           display: flex;
           align-items: center;
+          gap: 12px;
           font-family: 'Space Grotesk', sans-serif;
           font-weight: 800;
           font-size: 22px;
-          color: #fff;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.06em;
+          text-decoration: none;
         }
 
-        .brand-dot {
-          color: var(--orange);
+        .brand-logo-img {
+          height: 38px;
+          width: auto;
+          border-radius: 8px;
+          box-shadow: 0 0 16px rgba(0, 174, 239, 0.4);
+          transition: transform 0.3s ease;
+        }
+
+        .nav-brand:hover .brand-logo-img {
+          transform: scale(1.06) rotate(-2deg);
+        }
+
+        .text-inn {
+          color: #00AEEF;
+          text-shadow: 0 0 12px rgba(0, 174, 239, 0.4);
+        }
+
+        .text-verse {
+          color: #FFB800;
+          text-shadow: 0 0 12px rgba(255, 184, 0, 0.4);
         }
 
         .nav-links {
@@ -162,7 +188,7 @@ export default function Navbar() {
           left: 0;
           right: 0;
           height: 2px;
-          background: var(--orange);
+          background: linear-gradient(90deg, #00AEEF, #FFB800);
           border-radius: 2px;
         }
 
@@ -173,21 +199,22 @@ export default function Navbar() {
         }
 
         .btn-cta {
-          background: linear-gradient(135deg, var(--orange), var(--orange-deep));
-          color: #fff;
+          background: linear-gradient(135deg, #FFB800 0%, #D97706 100%);
+          color: #0B192C;
           padding: 10px 22px;
           border-radius: 8px;
           font-size: 13px;
-          font-weight: 700;
+          font-weight: 800;
           letter-spacing: 0.04em;
           text-transform: uppercase;
           transition: all 0.25s ease;
-          box-shadow: 0 6px 18px rgba(245, 130, 32, 0.3);
+          box-shadow: 0 6px 18px rgba(255, 184, 0, 0.35);
         }
 
         .btn-cta:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 24px rgba(245, 130, 32, 0.45);
+          box-shadow: 0 10px 24px rgba(255, 184, 0, 0.5);
+          background: linear-gradient(135deg, #FFD700 0%, #FFB800 100%);
         }
 
         .hamburger {

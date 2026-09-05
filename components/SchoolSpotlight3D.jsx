@@ -55,13 +55,14 @@ export default function SchoolSpotlight3D() {
 
         {/* Featured Quote Banner */}
         <div className="quote-banner-3d">
-          <div className="banner-badge">Official INNVERSE x Global Wisdom Poster</div>
+          <div className="banner-badge">Official INNVERSE Innovation Ecosystem</div>
           <h3>"{spot.quote}"</h3>
           <p>
             Coding &amp; Robotics teach students how to think logically, solve real-world challenges, and transform creative ideas into working physical systems.
           </p>
           <div className="partner-logos-row">
             <span className="partner-chip">🏫 Global Wisdom International School (Dera Bassi)</span>
+            <span className="partner-chip">🏫 Paragon Senior Secondary School (Sec-69 Mohali)</span>
             <span className="partner-chip glow">⚡ Powered by INNVERSE</span>
           </div>
         </div>

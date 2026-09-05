@@ -9,9 +9,17 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-brand">
-            <h3 className="brand-name">
-              INNVERSE<span className="brand-dot">.</span>
-            </h3>
+            <div className="brand-logo-header">
+              <img 
+                src="/images/innverse-official-logo.jpg" 
+                alt="INNVERSE Logo" 
+                className="footer-logo-img"
+              />
+              <h3 className="brand-name">
+                <span className="text-inn">INN</span>
+                <span className="text-verse">VERSE</span>
+              </h3>
+            </div>
             <p className="brand-desc">
               Building ecosystems, not one-off activities. We partner with forward-thinking schools to make hands-on innovation a weekly habit for students.
             </p>
@@ -93,16 +101,36 @@ export default function Footer() {
           margin-bottom: 60px;
         }
 
+        .brand-logo-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+
+        .footer-logo-img {
+          height: 42px;
+          width: auto;
+          border-radius: 8px;
+          box-shadow: 0 0 16px rgba(0, 174, 239, 0.4);
+        }
+
         .brand-name {
           font-family: 'Space Grotesk', sans-serif;
           font-size: 26px;
           font-weight: 800;
-          letter-spacing: 0.04em;
-          margin-bottom: 14px;
+          letter-spacing: 0.06em;
+          margin-bottom: 0;
         }
 
-        .brand-dot {
-          color: var(--orange);
+        .text-inn {
+          color: #00AEEF;
+          text-shadow: 0 0 12px rgba(0, 174, 239, 0.4);
+        }
+
+        .text-verse {
+          color: #FFB800;
+          text-shadow: 0 0 12px rgba(255, 184, 0, 0.4);
         }
 
         .brand-desc {
@@ -117,12 +145,13 @@ export default function Footer() {
           display: inline-block;
           font-size: 12px;
           font-weight: 700;
-          color: var(--orange);
+          color: #FFB800;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          padding: 4px 12px;
+          padding: 6px 14px;
           border-radius: 20px;
-          background: rgba(245, 130, 32, 0.12);
+          background: rgba(255, 184, 0, 0.12);
+          border: 1px solid rgba(255, 184, 0, 0.25);
         }
 
         .footer-col h5 {

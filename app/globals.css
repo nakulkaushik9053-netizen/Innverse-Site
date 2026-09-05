@@ -1,25 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
 
 :root {
-  --navy: #0B2341;
-  --navy-deep: #071726;
-  --navy-soft: #123059;
-  --orange: #F58220;
-  --orange-deep: #D96A0F;
+  --navy: #0B192C;
+  --navy-deep: #070F1E;
+  --navy-soft: #11223A;
+  --gold: #FFB800;
+  --gold-deep: #D97706;
+  --gold-light: #FFE58F;
+  --gold-glow: rgba(255, 184, 0, 0.35);
+  --electric: #00AEEF;
+  --electric-deep: #0284C7;
+  --electric-light: #38BDF8;
+  --electric-glow: rgba(0, 174, 239, 0.35);
+  --orange: #FFB800;
+  --orange-deep: #D97706;
   --teal: #0FB5A6;
   --teal-deep: #0B8F84;
-  --electric: #00AEEF;
-  --offwhite: #F5F7FA;
+  --offwhite: #F8FAFC;
   --white: #FFFFFF;
-  --charcoal: #23272B;
-  --ink: #0B2341;
+  --charcoal: #1E293B;
+  --ink: #0B192C;
   --ink-soft: #94A3B8;
   --line: rgba(255, 255, 255, 0.12);
   --radius: 16px;
   --maxw: 1240px;
-  --glass-bg: rgba(11, 35, 65, 0.65);
+  --glass-bg: rgba(11, 25, 44, 0.75);
   --glass-border: rgba(255, 255, 255, 0.15);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --brand-gradient: linear-gradient(135deg, #00AEEF 0%, #0077FF 40%, #FFD700 75%, #FFB800 100%);
+  --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFB800 50%, #D97706 100%);
+  --electric-gradient: linear-gradient(135deg, #38BDF8 0%, #00AEEF 50%, #0284C7 100%);
 }
 
 * {
