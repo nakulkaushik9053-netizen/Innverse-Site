@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { SITE_DATA } from '../../data/siteContent';
 import SchoolSpotlight3D from '../../components/SchoolSpotlight3D';
-import InteractiveCircuitSim from '../../components/InteractiveCircuitSim';
+import CircuitLabAppEmbedded from '../../components/CircuitLabAppEmbedded';
 
 export default function CircuitLabPage() {
 
@@ -24,17 +24,23 @@ export default function CircuitLabPage() {
               href="#circuitlab-demo"
               className="btn btn-orange"
             >
-              Test Live Workbench Below ↓
+              Launch Live Simulator ↓
             </a>
-            <Link href="/contact" className="btn btn-outline">
-              Request School License
-            </Link>
+            <a
+              href="/circuitlab.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
+              Open Fullscreen Window ↗
+            </a>
           </div>
         </div>
       </section>
 
-      {/* INTERACTIVE CIRCUITLAB SIMULATOR WORKBENCH */}
-      <InteractiveCircuitSim />
+      {/* FULL STANDALONE CIRCUITLAB APPLICATION EMBEDDED */}
+      <CircuitLabAppEmbedded />
+
 
 
       <section className="sim-features-section">
