@@ -2,20 +2,28 @@
 
 /* =========================================================
    INNVERSE OFFICIAL BRAND COLOR SYSTEM & DESIGN TOKENS
-   Predominantly Dark, High-Tech, Premium, Sophisticated & Trustworthy
+   Strict adherence to exact hex codes, color ratios, & rules:
+   - Deep Navy: #0B2341 (60% background/cards)
+   - Navy Dark: #061426 (Deepest background/hero)
+   - INNVERSE Orange: #F58220 (7% CTAs, key highlights)
+   - Electric Blue: #00AEEF (10% Tech highlights, active links, circuit lines)
+   - Golden Yellow: #F5B700 (3% Innovation accents)
+   - White: #FFFFFF & Light Grey: #F3F5F7 (20% Text/surfaces)
+   - Slate Blue Grey: #8FA4BD (Muted text)
    ========================================================= */
 
 :root {
   /* --- EXACT BRAND PALETTE --- */
-  --navy-dark: #061426;      /* Deepest background / Hero background (60%) */
-  --deep-navy: #0B2341;      /* Primary background, navbar, footer, major dark sections */
-  --navy-soft: #0E2A4E;      /* Elevated Card Surface */
-  --orange: #F58220;         /* INNVERSE Orange — Primary CTA, important highlights (7%) */
-  --orange-deep: #D96A0F;    /* Hover State Deep Orange */
-  --electric: #00AEEF;       /* Electric Blue — Tech highlights, active states, links (10%) */
-  --gold: #F5B700;           /* Golden Yellow — Secondary innovation accents (3%) */
-  --white: #FFFFFF;          /* Primary text on dark backgrounds (20% with Light Grey) */
-  --light-grey: #F3F5F7;     /* Secondary text / subtle backgrounds */
+  --navy-dark: #061426;      /* Main background & Hero background */
+  --deep-navy: #0B2341;      /* Primary cards, major dark sections */
+  --navy-card: #0B2341;      /* Card fill */
+  --navy-soft: #0E2B4E;      /* Elevated dark surface */
+  --orange: #F58220;         /* Primary CTA, important highlights */
+  --orange-deep: #D96A0F;    /* Deep Orange */
+  --electric: #00AEEF;       /* Tech highlights, active states, links */
+  --gold: #F5B700;           /* Golden Yellow - subtle innovation accent */
+  --white: #FFFFFF;          /* Primary text on dark background */
+  --light-grey: #F3F5F7;     /* Secondary light text / subtle fills */
   --slate-grey: #8FA4BD;     /* Muted text */
   --ink-soft: #8FA4BD;
 
@@ -30,9 +38,9 @@
   --maxw: 1240px;
 
   /* Shadows & Glows */
-  --shadow-sm: 0 4px 14px rgba(6, 20, 38, 0.3);
-  --shadow-md: 0 12px 30px rgba(6, 20, 38, 0.45);
-  --shadow-lg: 0 24px 60px rgba(4, 14, 28, 0.6);
+  --shadow-sm: 0 4px 14px rgba(6, 20, 38, 0.35);
+  --shadow-md: 0 12px 30px rgba(6, 20, 38, 0.5);
+  --shadow-lg: 0 24px 60px rgba(4, 14, 28, 0.7);
   --glow-orange: 0 8px 24px rgba(245, 130, 32, 0.32);
   --glow-electric: 0 8px 24px rgba(0, 174, 239, 0.32);
 
@@ -47,8 +55,8 @@
   --grad-dark: linear-gradient(180deg, #061426 0%, #0B2341 100%);
   
   /* 4. Hero glow: subtle #00AEEF and #F58220 radial glows over navy background */
-  --grad-hero-glow: radial-gradient(circle at 80% 20%, rgba(0, 174, 239, 0.15) 0%, transparent 45%),
-                    radial-gradient(circle at 20% 80%, rgba(245, 130, 32, 0.12) 0%, transparent 45%),
+  --grad-hero-glow: radial-gradient(circle at 82% 20%, rgba(0, 174, 239, 0.16) 0%, transparent 48%),
+                    radial-gradient(circle at 18% 82%, rgba(245, 130, 32, 0.12) 0%, transparent 48%),
                     linear-gradient(180deg, #061426 0%, #0B2341 100%);
 }
 
@@ -72,11 +80,15 @@ body {
 }
 
 /* Typography Hierarchy */
-h1, h2, h3, h4, .disp {
+h1, h2, h3, h4, h5, h6, .disp {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--white);
+}
+
+p {
+  color: var(--slate-grey);
 }
 
 a {
@@ -174,29 +186,29 @@ section {
 
 /* Card System: #0B2341 with subtle #00AEEF or #F58220 borders */
 .glass-card, .clean-card {
-  background: var(--deep-navy);
-  border: 1px solid var(--line-blue);
+  background: var(--deep-navy) !important;
+  border: 1px solid var(--line-blue) !important;
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   padding: 32px;
-  color: var(--white);
+  color: var(--white) !important;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
 .clean-card:hover, .glass-card:hover {
   transform: translateY(-4px);
-  border-color: var(--orange);
-  box-shadow: 0 16px 40px rgba(0, 174, 239, 0.2);
+  border-color: var(--orange) !important;
+  box-shadow: 0 16px 40px rgba(0, 174, 239, 0.22);
 }
 
 /* Elevated Navy Card */
 .dark-card {
-  background: var(--navy-soft);
-  border: 1px solid var(--line-blue);
+  background: var(--navy-soft) !important;
+  border: 1px solid var(--line-blue) !important;
   border-radius: var(--radius);
   padding: 32px;
-  color: var(--white);
+  color: var(--white) !important;
   box-shadow: var(--shadow-lg);
 }
 
@@ -218,9 +230,10 @@ section {
 
 /* Primary Button: #F58220 with White Text (Hover: Orange -> Golden Yellow) */
 .btn-orange, .btn-primary {
-  background: var(--grad-innovation);
+  background: var(--grad-innovation) !important;
   color: #FFFFFF !important;
   box-shadow: var(--glow-orange);
+  border: none !important;
 }
 
 .btn-orange:hover, .btn-primary:hover {
@@ -231,15 +244,15 @@ section {
 
 /* Secondary Button: transparent/navy with #00AEEF border */
 .btn-outline, .btn-secondary {
-  background: transparent;
+  background: transparent !important;
   color: #FFFFFF !important;
-  border: 1.5px solid var(--electric);
+  border: 1.5px solid var(--electric) !important;
   box-shadow: 0 4px 14px rgba(0, 174, 239, 0.15);
 }
 
 .btn-outline:hover, .btn-secondary:hover {
-  background: rgba(0, 174, 239, 0.12);
-  border-color: var(--electric);
+  background: rgba(0, 174, 239, 0.12) !important;
+  border-color: var(--electric) !important;
   transform: translateY(-2px);
   box-shadow: var(--glow-electric);
 }
