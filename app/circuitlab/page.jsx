@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { SITE_DATA } from '../../data/siteContent';
 import SchoolSpotlight3D from '../../components/SchoolSpotlight3D';
+import InteractiveCircuitSim from '../../components/InteractiveCircuitSim';
 
 export default function CircuitLabPage() {
-
 
   const p = SITE_DATA.product;
 
@@ -21,12 +21,10 @@ export default function CircuitLabPage() {
 
           <div className="cta-row center" style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
             <a
-              href="/innverse-website.html"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#circuitlab-demo"
               className="btn btn-orange"
             >
-              Launch Live Simulator ↗
+              Test Live Workbench Below ↓
             </a>
             <Link href="/contact" className="btn btn-outline">
               Request School License
@@ -34,6 +32,10 @@ export default function CircuitLabPage() {
           </div>
         </div>
       </section>
+
+      {/* INTERACTIVE CIRCUITLAB SIMULATOR WORKBENCH */}
+      <InteractiveCircuitSim />
+
 
       <section className="sim-features-section">
         <div className="wrap">
