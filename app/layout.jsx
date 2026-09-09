@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import QuickActionBar from '@/components/QuickActionBar'
 
 export const metadata = {
   title: 'INNVERSE — An Innovative Universe',
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <QuickActionBar />
       </body>
     </html>
   )

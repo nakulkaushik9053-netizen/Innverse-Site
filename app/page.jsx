@@ -11,6 +11,13 @@ import LabPackages from '../components/LabPackages';
 import InnovationJourney from '../components/InnovationJourney';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactForm from '../components/ContactForm';
+import CurriculumRoadmap from '../components/CurriculumRoadmap';
+import LabZonesExplorer from '../components/LabZonesExplorer';
+import HardwareKitsShowcase from '../components/HardwareKitsShowcase';
+import CompetitionsTrack from '../components/CompetitionsTrack';
+import SafetyCompliance from '../components/SafetyCompliance';
+import LabCalculator from '../components/LabCalculator';
+import FaqSection from '../components/FaqSection';
 import { SITE_DATA } from '../data/siteContent';
 
 export default function Home() {
@@ -18,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="home-page">
-      {/* HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <section className="hero-wrapper">
         <HeroCanvas />
         <div className="wrap hero-content-grid">
@@ -33,9 +40,9 @@ export default function Home() {
               <Link href="/contact" className="btn btn-orange">
                 Build Your Innovation Lab ↗
               </Link>
-              <Link href="/about" className="btn btn-outline">
-                Explore INNVERSE
-              </Link>
+              <a href="#roi-calculator" className="btn btn-outline">
+                Lab Budget Calculator 📊
+              </a>
             </div>
           </div>
 
@@ -45,28 +52,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* IMPACT STATS */}
+      {/* 2. IMPACT STATS */}
       <ImpactStats />
 
-      {/* PRODUCT SPOTLIGHT: CIRCUITLAB */}
+      {/* 3. PROGRESSIVE CURRICULUM ROADMAP (GRADES 3-12) */}
+      <CurriculumRoadmap />
+
+      {/* 4. PRODUCT SPOTLIGHT: CIRCUITLAB */}
       <CircuitLabSpotlight />
 
-      {/* PARTNER SCHOOL SPOTLIGHT: REAL STUDENTS & ROBOTS */}
+      {/* 5. PARTNER SCHOOL SPOTLIGHT: REAL STUDENTS & ROBOTS */}
       <SchoolSpotlight3D />
 
-      {/* STUDENT PROJECTS GALLERY */}
+      {/* 6. 360° LAB ZONES ARCHITECTURAL EXPLORER */}
+      <LabZonesExplorer />
+
+      {/* 7. STUDENT PROJECTS GALLERY */}
       <ProjectsShowcase />
 
-      {/* SCHOOL INNOVATION LAB PACKAGES */}
+      {/* 8. MODULAR HARDWARE KITS SHOWCASE */}
+      <HardwareKitsShowcase />
+
+      {/* 9. SCHOOL INNOVATION LAB PACKAGES */}
       <LabPackages />
 
-      {/* 8-STEP INNOVATION JOURNEY */}
+      {/* 10. INTERACTIVE SCHOOL BUDGET & ROI CALCULATOR */}
+      <LabCalculator />
+
+      {/* 11. GLOBAL COMPETITIONS & OLYMPIADS TRACK */}
+      <CompetitionsTrack />
+
+      {/* 12. 8-STEP SIGNATURE INNOVATION JOURNEY */}
       <InnovationJourney />
 
-      {/* TESTIMONIALS */}
+      {/* 13. SAFETY, QUALITY & NEP COMPLIANCE PILLARS */}
+      <SafetyCompliance />
+
+      {/* 14. TESTIMONIALS */}
       <TestimonialsSection />
 
-      {/* SCHOOL CONTACT / ENQUIRY FORM */}
+      {/* 15. FREQUENTLY ANSWERED QUESTIONS (TABS FOR PRINCIPALS, TEACHERS, PARENTS) */}
+      <FaqSection />
+
+      {/* 16. SCHOOL CONTACT / ENQUIRY FORM */}
       <ContactForm />
     </main>
   );

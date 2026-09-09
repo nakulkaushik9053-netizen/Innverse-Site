@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INNVERSE Website — Complete Block-by-Block Content Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-navy: #071726;
+      --navy-card: #0c2338;
+      --electric: #00aeef;
+      --orange: #f58220;
+      --teal: #0fb5a6;
+      --gold: #ffb800;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --border-line: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.65;
+      padding-bottom: 80px;
+    }
+
+    /* Top Action Bar */
+    .top-action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #071726;
+      color: #fff;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .top-action-bar .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .brand-highlight { color: var(--orange); }
+    .btn-print {
+      background: linear-gradient(135deg, #f58220, #e06c09);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(245, 130, 32, 0.4);
+    }
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(245, 130, 32, 0.5);
+    }
+
+    /* Document Canvas */
+    .doc-container {
+      max-width: 980px;
+      margin: 40px auto;
+      background: var(--white);
+      padding: 60px 70px;
+      border-radius: 16px;
+      border: 1px solid var(--border-line);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    /* Header Banner */
+    .doc-header {
+      border-bottom: 3px solid var(--primary-navy);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+    .doc-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(245, 130, 32, 0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    h1.doc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .doc-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: var(--bg-page);
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+    .meta-item strong { color: var(--primary-navy); }
+
+    /* Content Typography & Sections */
+    h2.section-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.55rem;
+      color: var(--primary-navy);
+      margin: 46px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-line);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      page-break-after: avoid;
+    }
+    .sec-num {
+      background: var(--primary-navy);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    h3.block-title {
+      font-size: 1.25rem;
+      color: var(--primary-navy);
+      margin: 30px 0 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      page-break-after: avoid;
+    }
+    .block-badge {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-home { background: #e0f2fe; color: #0284c7; }
+    .badge-sub { background: #fef3c7; color: #b45309; }
+
+    p { margin-bottom: 12px; font-size: 0.96rem; color: #334155; }
+    .quote-box {
+      border-left: 4px solid var(--orange);
+      background: #fffaf5;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-style: italic;
+      color: #0f172a;
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    /* Cards & Grids */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 16px 0 24px;
+      page-break-inside: avoid;
+    }
+    .content-card {
+      border: 1px solid var(--border-line);
+      border-radius: 10px;
+      padding: 16px 18px;
+      background: var(--white);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      page-break-inside: avoid;
+    }
+    .content-card.accent-cyan { border-top: 3px solid var(--electric); }
+    .content-card.accent-orange { border-top: 3px solid var(--orange); }
+    .content-card.accent-teal { border-top: 3px solid var(--teal); }
+    .content-card.accent-gold { border-top: 3px solid var(--gold); }
+
+    .card-header-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .card-header-line h4 {
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+    .card-icon { font-size: 1.3rem; }
+
+    /* Tables */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 0.92rem;
+      page-break-inside: avoid;
+    }
+    table.data-table th {
+      background: var(--primary-navy);
+      color: #fff;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    table.data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-line);
+      vertical-align: top;
+    }
+    table.data-table tr:nth-child(even) td {
+      background: #fbfcfe;
+    }
+
+    /* Lists */
+    ul.check-list {
+      list-style: none;
+      margin: 10px 0 16px;
+    }
+    ul.check-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+    ul.check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .spec-pill {
+      display: inline-block;
+      font-size: 0.76rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* Print Overrides */
+    @media print {
+      .top-action-bar { display: none !important; }
+      body { background: #fff !important; padding: 0 !important; }
+      .doc-container {
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      h2.section-heading { page-break-after: avoid; }
+      .content-card, table.data-table, .quote-box { page-break-inside: avoid; }
+      @page {
+        margin: 15mm 15mm 15mm 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="top-action-bar">
+    <div class="brand">
+      <span>INN<span class="brand-highlight">VERSE</span></span>
+      <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.8;">| Complete Site Text Documentation</span>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-8 0v4h8v-4m-8-4h.01"></path></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="doc-container">
+
+    <!-- Document Header -->
+    <header class="doc-header">
+      <div class="doc-tag">Master Blueprint & Content Documentation</div>
+      <h1 class="doc-title">INNVERSE Website Content Documentation</h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 0;">
+        Complete block-by-block text documentation of the 16 Home Page sections, interactive tools, school curriculum matrix, lab packages, and institutional subpages.
+      </p>
+
+      <div class="doc-meta-grid">
+        <div class="meta-item"><strong>Platform:</strong> INNVERSE School Ecosystem</div>
+        <div class="meta-item"><strong>Tagline:</strong> Where Curiosity Becomes Creation.</div>
+        <div class="meta-item"><strong>Target:</strong> Principals, STEM HODs & School Trustees</div>
+        <div class="meta-item"><strong>Standards:</strong> NEP-2020 & CBSE Code 417 Aligned</div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: HEADER & NAVIGATION -->
+    <h2 class="section-heading"><span class="sec-num">01</span> Global Header & Navigation Bar</h2>
+    <p>Persistent across all pages to guide school directors and visitors smoothly.</p>
+
+    <div class="content-card">
+      <div class="card-header-line">
+        <h4>Navigation Components & Links</h4>
+      </div>
+      <ul class="check-list">
+        <li><strong>Brand Logo:</strong> Official circular tech crest (<code>/images/innverse-official-logo.jpg</code>) with bold wordmark <strong>INNVERSE</strong>.</li>
+        <li><strong>Link 1 — Home (<code>/</code>):</strong> Main landing page introducing the ecosystem, school labs, CircuitLab, and projects.</li>
+        <li><strong>Link 2 — Programs & Labs (<code>/programs</code>):</strong> Detailed breakdown of 6 core school STEM tracks and turnkey lab setup tiers.</li>
+        <li><strong>Link 3 — Student Projects (<code>/projects</code>):</strong> Comprehensive gallery of working student inventions across robotics, IoT, and AI.</li>
+        <li><strong>Link 4 — CircuitLab (<code>/circuitlab</code>):</strong> In-house browser-based Arduino & electronics simulator showcase.</li>
+        <li><strong>Link 5 — About & Impact (<code>/about</code>):</strong> Vision, 3 foundational pillars, school impact metrics, and downloadable curriculum guides.</li>
+        <li><strong>Header Action Button:</strong> <code>Get In Touch ↗</code> (Direct jump to <code>/contact</code>).</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 2: HOME PAGE BLOCKS -->
+    <h2 class="section-heading"><span class="sec-num">02</span> Home Page (<code>/</code>) Block-by-Block (16 High-Impact Sections)</h2>
+
+    <!-- Block 1: Hero -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 1</span> Hero Section & 3D Interactive Canvas</h3>
+    <p><strong>Eyebrow Tag:</strong> <code>AI • Robotics • Coding • IoT • Electronics</code></p>
+    <p><strong>Main Heading:</strong> <span style="font-size: 1.25rem; font-weight: 800; color: var(--primary-navy);">BUILDING FUTURE-READY INNOVATORS.</span></p>
+    <div class="quote-box">
+      "We help schools move beyond theory into hands-on learning — where students explore, build, test, and create real-world solutions. Not activities. Systems."
+    </div>
+    <p><strong>Brand Motto:</strong> <em>Where Curiosity Becomes Creation.</em></p>
+    <p><strong>Calls to Action:</strong> <code>Build Your Innovation Lab ↗</code> (Primary) | <code>Lab Budget Calculator 📊</code> (Secondary).</p>
+
+    <!-- Block 2: Impact Stats -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 2</span> Key Impact Metrics & Statistics</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Metric</th><th>Primary Label</th><th>Context / Institutional Verification</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong style="color: var(--orange); font-size: 1.2rem;">15+</strong></td><td>Partner Schools</td><td>Building active STEM ecosystems across the region</td></tr>
+        <tr><td><strong style="color: var(--electric); font-size: 1.2rem;">5,000+</strong></td><td>Students Trained</td><td>Hands-on project experience with real microcontrollers</td></tr>
+        <tr><td><strong style="color: var(--teal); font-size: 1.2rem;">500+</strong></td><td>Projects Built</td><td>Physical working prototypes created and verified</td></tr>
+        <tr><td><strong style="color: #10b981; font-size: 1.2rem;">98%</strong></td><td>Satisfaction Rate</td><td>From school principals, trustees, and parents</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Block 3: Curriculum Roadmap -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 3</span> Progressive Curriculum Roadmap (Grades 3 to 12)</h3>
+    <p><strong>Eyebrow:</strong> <code>Grade-Wise Progression</code></p>
+    <p><strong>Heading:</strong> <span style="font-size: 1.2rem; font-weight: 700;">A Progressive STEM & Innovation Pathway (Grades 3 to 12)</span></p>
+    <p><em>Designed in accordance with NEP-2020 and CBSE Skill Subject mandates. Students advance from visual algorithmic logic to autonomous robotics and AI.</em></p>
+
+    <div class="card-grid">
+      <div class="content-card accent-cyan">
+        <div class="card-header-line"><h4>Grades 3 - 5 (Level 1: Foundations)</h4></div>
+        <p><strong>Theme:</strong> Observe & Play | 32 Hours / Year</p>
+        <ul class="check-list">
+          <li>Scratch 3.0 visual block-based coding</li>
+          <li>Simple machines, levers & pulleys</li>
+          <li>Paper circuits & safe LED loops</li>
+          <li><strong>Capstone:</strong> Interactive Animated Storybook</li>
+        </ul>
+      </div>
+      <div class="content-card accent-orange">
+        <div class="card-header-line"><h4>Grades 6 - 8 (Level 2: Builders)</h4></div>
+        <p><strong>Theme:</strong> Build & Measure | 48 Hours / Year</p>
+        <ul class="check-list">
+          <li>Arduino UNO architecture & pinouts</li>
+          <li>Sensors (LDR, Ultrasonic, DHT11)</li>
+          <li>C++ coding & CircuitLab simulation</li>
+          <li><strong>Capstone:</strong> Autonomous Obstacle-Avoiding Rover</li>
+        </ul>
+      </div>
+      <div class="content-card accent-teal">
+        <div class="card-header-line"><h4>Grades 9 - 10 (Level 3: Innovators)</h4></div>
+        <p><strong>Theme:</strong> Connect & Automate | 54 Hours / Year</p>
+        <ul class="check-list">
+          <li>ESP32 Wi-Fi & Bluetooth IoT systems</li>
+          <li>Cloud telemetry dashboards (Blynk)</li>
+          <li>Dual motor kinematics & 3D CAD modeling</li>
+          <li><strong>Capstone:</strong> IoT Smart Greenhouse System</li>
+        </ul>
+      </div>
+      <div class="content-card accent-gold">
+        <div class="card-header-line"><h4>Grades 11 - 12 (Level 4: Future Engineers)</h4></div>
+        <p><strong>Theme:</strong> Predict & Deploy | 60 Hours / Year</p>
+        <ul class="check-list">
+          <li>Edge AI Vision with ESP32-CAM & OpenCV</li>
+          <li>Neural networks for gesture/object recognition</li>
+          <li>Drone aerodynamics & custom PCB design</li>
+          <li><strong>Capstone:</strong> AI Surveillance Turret & Quadcopter</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Block 4: CircuitLab Spotlight -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 4</span> In-House Product Spotlight: CircuitLab</h3>
+    <p><strong>Eyebrow:</strong> <code>Our In-House Product</code></p>
+    <p><strong>Heading:</strong> <span style="font-size: 1.2rem; font-weight: 700;">Built In-House. Used By Our Own Students.</span></p>
+    <p><strong>Description:</strong> <em>"Meet CircuitLab — a browser-based interactive electronics and Arduino simulator built by INNVERSE. Students prototype circuits, write code, and simulate hardware behavior virtually before touching real components."</em></p>
+    <ul class="check-list">
+      <li><strong>14+ Real Hardware Components:</strong> LDRs, gas sensors, servo motors, ultrasonics, DHT11, LCD 16x2, push buttons.</li>
+      <li><strong>18 Ready-Made Guided Projects:</strong> Students can explore immediately with zero setup.</li>
+      <li><strong>Works Everywhere:</strong> Zero installation on Chromebooks, tablets, mobile phones, and laptops.</li>
+      <li><strong>Real-time C++ Code Execution:</strong> Interactive sensor pinouts with live serial monitor logs.</li>
+    </ul>
+    <p><strong>Button:</strong> <code>Try CircuitLab Live ↗</code> (Redirects to <code>/circuitlab</code>).</p>
+
+    <!-- Block 5: School Spotlight -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 5</span> Partner School Spotlight & 3D Interactive Gallery</h3>
+    <p><strong>Eyebrow:</strong> <code>Real Impact In Real Classrooms</code></p>
+    <p><strong>Heading:</strong> <span style="font-size: 1.2rem; font-weight: 700;">Partner School Ecosystems & Innovation Labs</span></p>
+    <div class="quote-box">
+      <strong>"INNOVATION STARTS WITH OBSERVATION: Observe • Identify • Think • Build"</strong><br>
+      Coding & Robotics teach students how to think logically, solve real-world challenges, and transform creative ideas into working physical systems.
+    </div>
+    <p><strong>Partner Institutions Highlighted:</strong> Global Wisdom International School (Dera Bassi) & Paragon Senior Secondary School (Sector-69, Mohali).</p>
+
+    <!-- Block 6: Lab Zones -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 6</span> 360° Innovation Lab Zones Architectural Explorer</h3>
+    <p><strong>Heading:</strong> <span style="font-size: 1.2rem; font-weight: 700;">Inside An INNVERSE Innovation Lab: 5 Core Functional Zones</span></p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Zone # & Name</th><th>Purpose & Workflow</th><th>Key Workstations & Equipment</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>01. Ideation & Design Hub</strong></td>
+          <td>Brainstorming, sprint planning, and CAD 3D modeling</td>
+          <td>Modular collaboration desks, magnetic glass idea boards, CAD workstations, sprint wall</td>
+        </tr>
+        <tr>
+          <td><strong>02. Electronics & Breadboard Station</strong></td>
+          <td>Circuit assembly, sensor wiring, and hardware debugging</td>
+          <td>Anti-static ESD workmats, regulated 5V/12V DC bench power, digital multimeters, sensor organizers</td>
+        </tr>
+        <tr>
+          <td><strong>03. Rapid Prototyping & 3D Print Bay</strong></td>
+          <td>Turning digital 3D models into physical enclosures</td>
+          <td>Dual-extrusion 3D printers, eco-friendly PLA spools, precision drills, enclosed fume filtration</td>
+        </tr>
+        <tr>
+          <td><strong>04. Robotics Arena & Testing Track</strong></td>
+          <td>Autonomous testing, obstacle runs, drone flight</td>
+          <td>Regulation line-follower mats, modular maze walls, drone safety net enclosure, timing sensors</td>
+        </tr>
+        <tr>
+          <td><strong>05. AI & Cloud IoT Server Rack</strong></td>
+          <td>Cloud telemetry dashboards, edge AI inference</td>
+          <td>Local edge computing node, live telemetry classroom screen, Wi-Fi 6 IoT gateway hub</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Block 7: Student Projects -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 7</span> Student Projects Showcase</h3>
+    <p>Filterable across: <code>All Projects</code>, <code>Robotics</code>, <code>IoT & Smart Systems</code>, <code>Electronics</code>, <code>AI & Vision</code>.</p>
+    <ul class="check-list">
+      <li><strong>Smart Automatic Dustbin (IoT / Beginner):</strong> Ultrasonic sensor + Servo motor automatic lid.</li>
+      <li><strong>Gas Leakage Alarm System (Electronics / Intermediate):</strong> MQ-2 sensor + Piezo buzzer alert.</li>
+      <li><strong>Automatic Smart Street Light (Electronics / Beginner):</strong> LDR light sensing dusk-to-dawn control.</li>
+      <li><strong>Autonomous Line Follower Robot (Robotics / Intermediate):</strong> Dual IR sensors + L298N motor driver.</li>
+      <li><strong>Smart Agricultural Irrigation (IoT / Intermediate):</strong> Soil moisture sensor + 5V water pump relay.</li>
+      <li><strong>Bluetooth Home Automation (IoT / Advanced):</strong> HC-05 module + Smartphone App AC control.</li>
+      <li><strong>Obstacle Avoiding Rover (Robotics / Intermediate):</strong> 180° servo sweeping ultrasonic sensor.</li>
+      <li><strong>AI Camera Object Recognition (AI / Advanced):</strong> ESP32-CAM neural network image classifier.</li>
+    </ul>
+
+    <!-- Block 8: Hardware Kits -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 8</span> Modular Classroom Hardware Kits Showcase</h3>
+    <div class="card-grid">
+      <div class="content-card accent-orange">
+        <h4>🤖 INNVERSE RoboMaster 4WD Chassis Kit</h4>
+        <p>Anodized dual-deck aluminum chassis with 4x metal gear motors, quick-swap sensor brackets, and rechargeable Li-ion power shield.</p>
+      </div>
+      <div class="content-card accent-cyan">
+        <h4>📡 INNVERSE Cloud IoT & Weather Station Kit</h4>
+        <p>ESP32 dual-core Wi-Fi/BLE board, DHT22 sensor, MQ-135 air quality probe, OLED screen, and 4-channel isolated relay driver.</p>
+      </div>
+      <div class="content-card accent-gold">
+        <h4>👁️ INNVERSE AI Vision & Edge Computing Pack</h4>
+        <p>ESP32-CAM optical sensor, dual-axis pan/tilt tracking servos, pre-trained neural classification models, USB serial programmer.</p>
+      </div>
+      <div class="content-card accent-teal">
+        <h4>⚡ INNVERSE SafeElectronics Prototyping Station</h4>
+        <p>Regulated 5V/3.3V dual-rail breadboard power supply, 30+ snap-fit sensors, jumper organizers, multimeter, 100% low-voltage DC safe.</p>
+      </div>
+    </div>
+
+    <!-- Block 9: Lab Packages -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 9</span> School Innovation Lab Packages</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Package Tier</th><th>Capacity & Space</th><th>Hardware & Deliverables Included</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Starter Lab</strong><br><small style="color: var(--text-muted);">Essential STEM setup</small></td>
+          <td>30 Students / Batch<br>300 - 500 sq ft</td>
+          <td>• 10x Arduino & Sensor Starter Kits<br>• 5x Basic Robotics Kits<br>• Grade 6-8 Curriculum<br>• 2 Days Teacher Orientation<br>• CircuitLab License</td>
+        </tr>
+        <tr>
+          <td><strong>Advanced Innovation Lab</strong><br><small style="color: var(--orange); font-weight: 700;">★ MOST POPULAR</small></td>
+          <td>45 Students / Batch<br>600 - 900 sq ft</td>
+          <td>• 15x Advanced Arduino & IoT Kits<br>• 10x AI Vision Modules<br>• 2x 3D Printers + Filament<br>• Grade 6-10 Comprehensive Curriculum<br>• 4 Days Faculty Masterclass<br>• Showcase Event</td>
+        </tr>
+        <tr>
+          <td><strong>Center of Excellence Lab</strong><br><small style="color: var(--text-muted);">Flagship research hub</small></td>
+          <td>60+ Students / Batch<br>1000+ sq ft</td>
+          <td>• Custom Modular Furniture<br>• 20x Robotics & Drone Kits<br>• 4x 3D Printers + Laser Cutter<br>• AI Workstations<br>• Year-Round Co-Teaching & Dedicated Mentors<br>• Hackathon Hosting</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Block 10: Calculator -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 10</span> Interactive School Budget & ROI Calculator</h3>
+    <p>Allows school leaders to adjust student count (150–3,000+), target grade span, and lab tier to calculate:</p>
+    <ul class="check-list">
+      <li><strong>Optimal Batch Capacity:</strong> (30 to 60 students) at a 2:1 hands-on station ratio.</li>
+      <li><strong>Active Hardware Kits Required:</strong> Automatically calculated with buffer units.</li>
+      <li><strong>Recommended Room Dimensions:</strong> 350 to 1,000+ sq ft layout blueprints.</li>
+      <li><strong>Weekly Period Scheduling:</strong> Optimized for standard CBSE/ICSE timetables.</li>
+      <li><strong>Faculty Training Hours:</strong> 16 to 60+ hours of accredited masterclasses.</li>
+      <li><strong>NEP-2020 Compliance Score:</strong> 100% aligned with mandatory Coding & AI standards.</li>
+    </ul>
+
+    <!-- Block 11: Competitions -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 11</span> Global Competitions & Olympiads Mentorship Track</h3>
+    <p>Mentorship programs for: <strong>World Robot Olympiad (WRO)</strong>, <strong>FIRST LEGO League (FLL)</strong>, <strong>ATL Marathon (NITI Aayog)</strong>, <strong>CBSE National Science Exhibition</strong>, and <strong>Smart India Hackathon (Junior)</strong>.</p>
+    <div class="quote-box">100% of partner school competition teams receive dedicated mentor coaching, chassis fabrication, and mock judging trials.</div>
+
+    <!-- Block 12: Process -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 12</span> The 8-Step Signature Innovation Method</h3>
+    <p><code>01. Observe</code> → <code>02. Identify</code> → <code>03. Understand</code> → <code>04. Imagine</code> → <code>05. Design</code> → <code>06. Build</code> → <code>07. Test</code> → <code>08. Improve</code></p>
+    <div class="quote-box">"Innovators do not quit — innovators iterate and improve."</div>
+
+    <!-- Block 13: Safety -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 13</span> Zero-Risk Safety, Reliability & NEP Compliance</h3>
+    <ul class="check-list">
+      <li><strong>100% Kid-Safe Low Voltage:</strong> All circuits operate on 5V/12V DC power. Zero dangerous AC exposure.</li>
+      <li><strong>Short-Circuit & Reverse Polarity Protection:</strong> Smart power distribution trips in 0.01 seconds on accidental miswiring.</li>
+      <li><strong>48-Hour Rapid Replacement Guarantee:</strong> Damaged sensors or controllers replaced within 48 hours.</li>
+      <li><strong>NEP-2020 & NCF-SE 2023 Aligned:</strong> Direct integration with CBSE Subject Code 417 (AI) and Coding standards.</li>
+    </ul>
+
+    <!-- Block 14: Testimonials -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 14</span> Testimonials & Trust Validation</h3>
+    <p>Verified endorsements from Dr. R. K. Sharma (Principal, Apex Global School, New Delhi), Sunita Verma (STEM Coordinator, Heritage Public School, Chandigarh), and Amitabh Sen (Head of Technology, Modern Academy, Mohali).</p>
+
+    <!-- Block 15: FAQs -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 15</span> Frequently Answered Questions</h3>
+    <p>Comprehensive answers categorized for <strong>School Principals & Trustees</strong> (space, budgets, admissions), <strong>STEM Teachers</strong> (no prior coding required, ready slides, grading rubrics), and <strong>Parents</strong> (active creation over screen time, career impact).</p>
+
+    <!-- Block 16: Contact Form -->
+    <h3 class="block-title"><span class="block-badge badge-home">Block 16</span> School Partnership & Enquiry Form</h3>
+    <p>Direct coordinates: <code>info@innverse.tech</code> | <code>+91 99151 14333</code> | WhatsApp Direct Chat. Comprehensive form capturing school details and specific STEM requirements.</p>
+
+    <!-- SECTION 3: QUICK ACTION BAR -->
+    <h2 class="section-heading"><span class="sec-num">03</span> Global Floating Quick Action Bar</h2>
+    <p>Floats on bottom-right after scrolling 300px: WhatsApp Chat, Instant School Proposal Request, and Phone Call button.</p>
+
+    <!-- SECTION 4: SUBPAGES -->
+    <h2 class="section-heading"><span class="sec-num">04</span> Subpages Content Breakdown</h2>
+    <div class="card-grid">
+      <div class="content-card">
+        <h4>Programs & Services (<code>/programs</code>)</h4>
+        <p>6 Core verticals (Lab Setup, AI/Robotics, IoT/Smart Systems, 3D Prototyping, Workshops, Teacher Training) + Lab comparison table.</p>
+      </div>
+      <div class="content-card">
+        <h4>About Us & Impact (<code>/about</code>)</h4>
+        <p>Vision + 3 Pillars + Downloadable School Handbooks (Lab Setup Guide 2.4MB, Curriculum Roadmap 1.8MB, Teacher Manual 3.1MB).</p>
+      </div>
+      <div class="content-card">
+        <h4>CircuitLab Simulator (<code>/circuitlab</code>)</h4>
+        <p>Dedicated portal with Live Simulator launcher, 14+ virtual components, and ready starter projects.</p>
+      </div>
+      <div class="content-card">
+        <h4>Student Projects (<code>/projects</code>) & Contact (<code>/contact</code>)</h4>
+        <p>Full-screen interactive student build gallery and direct school partnership consultation booking.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5: FOOTER -->
+    <h2 class="section-heading"><span class="sec-num">05</span> Global Footer Component</h2>
+    <div class="content-card">
+      <p><strong>Brand Tagline:</strong> <em>Building ecosystems, not one-off activities. We partner with forward-thinking schools to make hands-on innovation a weekly habit for students. Where Curiosity Becomes Creation.</em></p>
+      <ul class="check-list">
+        <li><strong>Solutions Links:</strong> Innovation Labs, AI & Robotics, IoT & Smart Systems, 3D Design, CircuitLab Simulator.</li>
+        <li><strong>Explore Links:</strong> Student Projects, About & Method, School Impact, Curriculum Resources, Partner With Us.</li>
+        <li><strong>Contact:</strong> <code>info@innverse.tech</code> | <code>+91 99151 14333</code> | WhatsApp Quick Chat.</li>
+        <li><strong>Socials:</strong> Official Instagram (<code>@innverseindia</code>) & LinkedIn (<code>INNVERSE India</code>).</li>
+        <li><strong>Copyright:</strong> © 2026 INNVERSE. All rights reserved.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
